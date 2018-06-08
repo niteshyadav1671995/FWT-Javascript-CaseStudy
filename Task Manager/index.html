@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class= "container">
+    <div class="jumbotron">
+        <h1 style="text-align : center">Task Manager Application</h1>
+    </div>
+    <div class = "mainbody">
+    <div class = "section">
+        Titile <input type="text" id="taskname">
+        Due Date <input id="taskdate" type="date">
+        <button onclick = "handler.add()" class="btn btn-dark">ADD</button>
+    </div>
+    <ul></ul>
+    <div class = "main">
+        <select id="filterOption" onchange="handler.filterTasks()">
+        <option>ALL</option>
+        <option>IN-PROGRESS</option>
+        <option>COMPLETED</option>
+        </select>
+        <table id="tasksview" class = "table table-dark" ></table>
+        <div style="text-align: center">
+        <button onclick = "handler.delete()" class="btn btn-danger">DELETE</button>
+        <button onclick = "handler.changeStatus()" class="btn btn-dark">CHANGE STATUS</button>
+        </div>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
