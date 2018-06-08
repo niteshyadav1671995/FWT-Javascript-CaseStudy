@@ -11,13 +11,11 @@
         <h1 style="text-align : center">Task Manager Application</h1>
     </div>
     <div class = "mainbody">
-    <div class = "section">
-        Titile <input type="text" id="taskname">
-        Due Date <input id="taskdate" type="date">
-        <button onclick = "handler.add()" class="btn btn-dark">ADD</button>
-    </div>
-    <ul></ul>
-    <div class = "main">
+        <div class = "section">
+            Titile <input type="text" id="taskname">
+            Due Date <input id="taskdate" type="date">
+            <button onclick = "handler.add()" class="btn btn-dark">ADD</button>
+        </div>
         <select id="filterOption" onchange="handler.filterTasks()">
         <option>ALL</option>
         <option>IN-PROGRESS</option>
@@ -28,7 +26,6 @@
         <button onclick = "handler.delete()" class="btn btn-danger">DELETE</button>
         <button onclick = "handler.changeStatus()" class="btn btn-dark">CHANGE STATUS</button>
         </div>
-    </div>
     </div>
     <script src="js/script.js"></script>
 </body>

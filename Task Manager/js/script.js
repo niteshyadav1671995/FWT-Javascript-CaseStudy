@@ -10,17 +10,13 @@ var taskslist = {
     },
     
     deleteByIndex : function (index){
-        console.log(index);
         taskslist.tasks.splice(index,1);
-        console.log(taskslist.tasks[index]);
+     
     },
      
     changeStatusByIndex : function (index){
-        console.log(index);
         taskslist.tasks[index].status = !taskslist.tasks[index].status;
-        console.log(taskslist.tasks[index]);
-    
-    }
+     }
     
     
 }
@@ -49,7 +45,6 @@ var handler = {
     
     filterTasks : function (){
         var filterElement = document.getElementById("filterOption");
-        console.log(filterElement.value);
         if(filterElement.value === "IN-PROGRESS"){
            var tasks = taskslist.tasks.filter(checkTasksInProgress);
             view.displayTasks(tasks);
@@ -99,13 +94,12 @@ var handler = {
 
 var view = {
     displayTasks : function (tasks){
-        console.log(tasks);
+
         var viewElement =  document.getElementById("tasksview");
         viewElement.innerHTML="";
         viewElement = this.createTableHeader(viewElement);
         var index=0;
         var taskArray = tasks;
-        console.log(taskArray);
       
         for(index=0;index<taskArray.length;index++){
             var tr = document.createElement("tr");
@@ -128,7 +122,6 @@ var view = {
             tr.appendChild(statusElement);
             viewElement.appendChild(tr);
         }      
-        console.log(viewElement)
     },
     
     
@@ -136,8 +129,6 @@ var view = {
         var inputDate = new Date(input);
         var currentDate = new Date();
         var message ="";
-        console.log(currentDate+" "+currentDate.getTime()+inputDate+" "+inputDate.getTime());
-
         if(inputDate.getDate() === currentDate.getDate()){
             message = "Due Today";
         }else if(inputDate.getTime() > currentDate.getTime()){
